@@ -1,0 +1,13 @@
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  myChatBot:
+    lang: python
+    handler: ./myChatBot
+    image: rpandey007/myChatBot
+    environment:
+      content_type: application/json
+      read_timeout: "90s" # Env Variable
+      write_timeout: "90s" 
+      Dependencies: ./requirements.txt
